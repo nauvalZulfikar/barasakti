@@ -24,7 +24,7 @@ Dokumen ini berisi daftar ide perbaikan untuk website PT. Bara Sakti Ziwa Abadi.
 | 14 | **Performance** | ~~Foto-foto belum dioptimasi ukurannya~~ ✅ **DONE** | Semua foto diconvert dari JPG ke WebP (quality 80) menggunakan sharp. Hero: 324KB→166KB, rata-rata hemat ~40%. Import di semua komponen diupdate ke `.webp`. | Sedang |
 | 15 | **UX** | ~~Tidak ada lazy loading pada gambar~~ ✅ **DONE** | `loading="lazy"` + `decoding="async"` ditambahkan ke semua img. Hero pakai `loading="eager"`. Semua img punya `bg-[#1f2937]` sebagai placeholder warna saat loading. | Rendah |
 | 16 | **SEO** | ~~Tidak ada favicon~~ ✅ **DONE** | File favicon diterima dari owner, ditempatkan di `public/favicon.svg` (atau `.ico`/`.png`), dan di-link di `index.html` dengan `<link rel="icon">`. | Rendah |
-| 17 | **Deployment** | Website belum punya URL publik ⏳ **PENDING** | Rekomendasi: **Vercel** (gratis selamanya, tidak ada cold start). Render lebih cocok untuk backend. Menunggu keputusan owner. | Tinggi |
+| 17 | **Deployment** | ~~Website belum punya URL publik~~ ✅ **DONE** | Deploy ke Vercel. Domain `barasakti.com` terhubung — live di https://www.barasakti.com/ dengan SSL otomatis. | Tinggi |
 | 18 | **Konten** | ~~Footer copyright hardcoded 2025~~ ✅ **DONE** | Diganti dengan `new Date().getFullYear()` di `lang.js` untuk kedua bahasa — otomatis update setiap tahun. | Rendah |
 | 19 | **Konten** | ~~Belum ada video company profile~~ ✅ **DONE** | File video diterima dari owner, ditempatkan di `src/assets/video/company-profile.mp4`. Dipasang di section About sebagai embedded player. | Sedang |
 | 20 | **UX** | ~~Tidak ada Google Maps embed di section Contact~~ ✅ **DONE** | `<iframe>` embed Google Maps ditambahkan di kolom kiri Contact, di bawah info kontak. Tidak perlu API key. | Sedang |
@@ -32,6 +32,7 @@ Dokumen ini berisi daftar ide perbaikan untuk website PT. Bara Sakti Ziwa Abadi.
 | 22 | **Performance** | Video company profile belum dioptimasi ⏳ **PENDING** | File MP4 bisa sangat besar. Rekomen: compress dengan HandBrake (gratis) ke max ~30MB, atau upload ke YouTube dan pakai `<iframe>` embed supaya tidak membebani hosting. | Sedang |
 | 23 | **SEO** | ~~URL section tidak update saat scroll~~ ✅ **DONE** | `history.replaceState` ditambahkan di `useScrollSpy.js` — URL otomatis update ke `/#about`, `/#services`, dll saat scroll. | Rendah |
 | 24 | **Aksesibilitas** | ~~Tidak ada `aria-label` di tombol hamburger & back-to-top~~ ✅ **DONE** | `aria-label="Buka menu navigasi"` + `aria-expanded` di hamburger `Navbar.jsx`. `BackToTop.jsx` sudah punya `aria-label="Back to top"`. | Rendah |
+| 25 | **Email** | Belum ada email domain perusahaan ⏳ **PENDING** | Setup Zoho Mail gratis dengan domain `barasakti.com`. Tambah MX record di DNS registrar, buat akun `info@barasakti.com`. Setelah jadi, connect ke EmailJS untuk form contact. | Sedang |
 
 ---
 
@@ -39,6 +40,6 @@ Dokumen ini berisi daftar ide perbaikan untuk website PT. Bara Sakti Ziwa Abadi.
 
 | # | Masalah | Yang Harus Dilakukan | Butuh Info | Prioritas |
 |---|---------|----------------------|------------|-----------|
-| 1 | Form contact tidak mengirim pesan | Daftar EmailJS → connect Gmail → buat template → pasang Service ID, Template ID, Public Key ke `Contact.jsx` | 3 key dari emailjs.com | Tinggi |
-| 17 | Website belum punya URL publik | Deploy ke Vercel | Keputusan owner | Tinggi |
+| 1 | Form contact tidak mengirim pesan | Daftar EmailJS → connect ke email domain → buat template → pasang Service ID, Template ID, Public Key ke `Contact.jsx` | 3 key dari emailjs.com | Tinggi |
 | 22 | Video belum dioptimasi | Compress MP4 dengan HandBrake atau ganti ke YouTube embed | File teroptimasi atau link YouTube dari owner | Sedang |
+| 25 | Belum ada email domain perusahaan | Setup Zoho Mail gratis → verifikasi domain `barasakti.com` → tambah MX record di DNS registrar → buat akun `info@barasakti.com` | — | Sedang |
