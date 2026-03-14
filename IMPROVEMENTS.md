@@ -33,6 +33,7 @@ Dokumen ini berisi daftar ide perbaikan untuk website PT. Bara Sakti Ziwa Abadi.
 | 23 | **SEO** | ~~URL section tidak update saat scroll~~ ✅ **DONE** | `history.replaceState` ditambahkan di `useScrollSpy.js` — URL otomatis update ke `/#about`, `/#services`, dll saat scroll. | Rendah |
 | 24 | **Aksesibilitas** | ~~Tidak ada `aria-label` di tombol hamburger & back-to-top~~ ✅ **DONE** | `aria-label="Buka menu navigasi"` + `aria-expanded` di hamburger `Navbar.jsx`. `BackToTop.jsx` sudah punya `aria-label="Back to top"`. | Rendah |
 | 25 | **Email** | Belum ada email domain perusahaan ⏳ **PENDING** | Setup Zoho Mail gratis dengan domain `barasakti.com`. Tambah MX record di DNS registrar, buat akun `info@barasakti.com`. Setelah jadi, connect ke EmailJS untuk form contact. | Sedang |
+| 26 | **Deployment** | ~~Auto deploy belum aktif~~ ✅ **DONE** | GitHub repo `nauvalZulfikar/barasakti` sudah connect ke Vercel. Setiap push ke `master` otomatis deploy ke `barasakti.com`. | Tinggi |
 
 ---
 
@@ -40,6 +41,6 @@ Dokumen ini berisi daftar ide perbaikan untuk website PT. Bara Sakti Ziwa Abadi.
 
 | # | Masalah | Yang Harus Dilakukan | Butuh Info | Prioritas |
 |---|---------|----------------------|------------|-----------|
-| 1 | Form contact tidak mengirim pesan | Daftar EmailJS → connect ke email domain → buat template → pasang Service ID, Template ID, Public Key ke `Contact.jsx` | 3 key dari emailjs.com | Tinggi |
-| 22 | Video belum dioptimasi | Compress MP4 dengan HandBrake atau ganti ke YouTube embed | File teroptimasi atau link YouTube dari owner | Sedang |
-| 25 | Belum ada email domain perusahaan | Setup Zoho Mail gratis → verifikasi domain `barasakti.com` → tambah MX record di DNS registrar → buat akun `info@barasakti.com` | — | Sedang |
+| 1 | Form contact tidak mengirim pesan | Daftar EmailJS → connect email domain → pasang Service ID, Template ID, Public Key ke `Contact.jsx` | 3 key dari emailjs.com | Tinggi |
+| 22 | Video belum dioptimasi | Compress MP4 dengan HandBrake atau ganti ke YouTube embed | File/link YouTube dari owner | Sedang |
+| 25 | Belum ada email domain perusahaan | Setup Zoho Mail gratis → verifikasi domain `barasakti.com` → tambah MX record → buat `info@barasakti.com` | — | Sedang |

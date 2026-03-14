@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useScrollSpy } from '../hooks/useScrollSpy'
 import { useLang } from '../hooks/useLang'
+import logo from '../assets/logo.png'
 
 const sectionIds = ['about', 'services', 'projects', 'customers', 'contact']
 
@@ -30,7 +31,9 @@ export default function Navbar() {
 
   return (
     <nav ref={menuRef} className={`fixed top-0 inset-x-0 z-50 flex items-center justify-between px-[6%] py-5 transition-all duration-300 ${scrolled ? 'bg-[#0a0f1e]/90 backdrop-blur-md border-b border-[#374151]' : ''}`}>
-      <div className="text-[#00d4ff] text-2xl font-black tracking-[4px]">.BARA</div>
+      <a href="#" className="no-underline">
+        <img src={logo} alt="PT. Bara Sakti Ziwa Abadi" className="h-10 w-auto object-contain" />
+      </a>
 
       <ul className="hidden md:flex gap-8 list-none">
         {tx.nav.links.map((l, i) => (
