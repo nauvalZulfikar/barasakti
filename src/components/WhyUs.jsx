@@ -41,19 +41,19 @@ export default function Customers() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {customers.map(item => (
-            <div key={item.name} className="bg-[#1f2937] border border-[#374151] rounded-xl px-5 py-5 flex flex-col items-center justify-center text-center gap-2 hover:border-[#ff6b35] hover:-translate-y-1 transition-all duration-200 cursor-default group">
+            <div key={item.name} className="bg-white rounded-xl px-5 py-5 flex flex-col items-center justify-center text-center gap-2 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#00d4ff]/20 transition-all duration-200 cursor-default group">
               {item.logo ? (
                 <img
                   src={item.logo}
                   alt={item.name}
                   loading="lazy"
                   decoding="async"
-                  className="h-10 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+                  className="h-10 w-auto object-contain"
                 />
               ) : (
-                <div className="text-[#f9fafb] font-black text-sm tracking-wider group-hover:text-[#ff6b35] transition-colors">{item.abbr}</div>
+                <div className="text-[#0a0f1e] font-black text-sm tracking-wider">{item.abbr}</div>
               )}
-              <div className="text-[#9ca3af] text-xs leading-snug">{item.name}</div>
+              <div className="text-[#6b7280] text-xs leading-snug">{item.name}</div>
             </div>
           ))}
         </div>
