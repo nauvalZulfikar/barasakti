@@ -1,19 +1,30 @@
 import { useFadeIn } from '../hooks/useFadeIn'
 import { useLang } from '../hooks/useLang'
 
+import logoMRT from '../assets/logos/MRT-Jakarta.png'
+import logoOtics from '../assets/logos/otics.png'
+import logoBJM from '../assets/logos/BJM-Budi-Jaya-Mesindo.png'
+import logoNihon from '../assets/logos/pt-nihon-plast-indonesia.png'
+import logoMekar from '../assets/logos/Mekar-Armada-Jaya.png'
+import logoMeiyume from '../assets/logos/Meiyume.png'
+import logoCat from '../assets/logos/pt-caterpillar-inc.png'
+import logoGE from '../assets/logos/GE.png'
+import logoBiofarma from '../assets/logos/Biofarma.png'
+import logoGMF from '../assets/logos/gmf-aeroasia.png'
+
 const customers = [
-  { name: 'MRT Jakarta', abbr: 'MRT' },
-  { name: 'PT. Otics Indonesia', abbr: 'OTICS' },
-  { name: 'Quarta', abbr: 'QUARTA' },
-  { name: 'PT. Budi Jaya Mesindo', abbr: 'BJM' },
-  { name: 'PT. Nihon Plast Indonesia', abbr: 'NIHON' },
-  { name: 'PT. Mekar Armada Jaya', abbr: 'MAJ' },
-  { name: 'Meiyume', abbr: 'MEIYUME' },
-  { name: 'Daytona', abbr: 'DAYTONA' },
-  { name: 'PT. CAT', abbr: 'CAT' },
-  { name: 'PT. GE Nusantara Turbine', abbr: 'GE' },
-  { name: 'Biofarma', abbr: 'BIOFARMA' },
-  { name: 'GMF AeroAsia', abbr: 'GMF' },
+  { name: 'MRT Jakarta', abbr: 'MRT', logo: logoMRT },
+  { name: 'PT. Otics Indonesia', abbr: 'OTICS', logo: logoOtics },
+  { name: 'Quarta', abbr: 'QUARTA', logo: null },
+  { name: 'PT. Budi Jaya Mesindo', abbr: 'BJM', logo: logoBJM },
+  { name: 'PT. Nihon Plast Indonesia', abbr: 'NIHON', logo: logoNihon },
+  { name: 'PT. Mekar Armada Jaya', abbr: 'MAJ', logo: logoMekar },
+  { name: 'Meiyume', abbr: 'MEIYUME', logo: logoMeiyume },
+  { name: 'Daytona', abbr: 'DAYTONA', logo: null },
+  { name: 'PT. CAT', abbr: 'CAT', logo: logoCat },
+  { name: 'PT. GE Nusantara Turbine', abbr: 'GE', logo: logoGE },
+  { name: 'Biofarma', abbr: 'BIOFARMA', logo: logoBiofarma },
+  { name: 'GMF AeroAsia', abbr: 'GMF', logo: logoGMF },
 ]
 
 export default function Customers() {
@@ -30,8 +41,18 @@ export default function Customers() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {customers.map(item => (
-            <div key={item.name} className="bg-[#1f2937] border border-[#374151] rounded-xl px-5 py-5 flex flex-col items-center justify-center text-center gap-1 hover:border-[#ff6b35] hover:-translate-y-1 transition-all duration-200 cursor-default group">
-              <div className="text-[#f9fafb] font-black text-sm tracking-wider group-hover:text-[#ff6b35] transition-colors">{item.abbr}</div>
+            <div key={item.name} className="bg-[#1f2937] border border-[#374151] rounded-xl px-5 py-5 flex flex-col items-center justify-center text-center gap-2 hover:border-[#ff6b35] hover:-translate-y-1 transition-all duration-200 cursor-default group">
+              {item.logo ? (
+                <img
+                  src={item.logo}
+                  alt={item.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-10 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+                />
+              ) : (
+                <div className="text-[#f9fafb] font-black text-sm tracking-wider group-hover:text-[#ff6b35] transition-colors">{item.abbr}</div>
+              )}
               <div className="text-[#9ca3af] text-xs leading-snug">{item.name}</div>
             </div>
           ))}
