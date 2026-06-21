@@ -26,3 +26,9 @@ dist-ssr
 # Raw assets (tidak perlu di-push)
 Poto/
 Poto.rar
+
+# Secrets / agent config
+.env
+.env.*
+agent_queue.json
+agent.log
